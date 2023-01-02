@@ -8,29 +8,51 @@
   <title>Document</title>
 </head>
 <body>
-  <canvas id="carCanvas"></canvas>
-  <div id="verticalButtons">
-    <button onclick="save()">Save Best 💾</button>
-    <button onclick="discard()">Start Over 🗑</button>
-    <button onclick="start()">New Run 🚗</button>
+  <div id="carColumn" >
+    <canvas id="carCanvas"></canvas>
+  </div>
+  <div id="buttonColumn">
+    <h1>Ai Car</h1>
+
+    <p>Train a neural network to suffle trough traffic</p>
+
+    <p>The neural network can "see" obstacles with 5 sensors that feed in to neural network visualised on the righ (game needs to be running)</p>
+
+    <p>The neural network is connected to the controls for the car. Four controls are for accelerate, reverse and steer to each direction</p>
+
+    <p>You are in control of a simple genetic algorithm that creates 1-100 cars each run and follows the one that covers greatest distance.</p>
+
+    <p>You can save the car being followed for starting point for next generation, as well as change the amount of cars, increase the density of traffict and adjust towards smallers degree of mutation between generations.</p>
+
+    <p>Here is a challenge: develop a model that can navigate trough the all of traffic in its densest seetting with only one car.</p>
+
+
+
+
 
     <div class="sliderContainer">
       <label for="carNum">Amount of cars</label>
       <input type="range" min="1" max="100" value="100" class="slider" id="carNum">
     </div>
-
+    
     <div class="sliderContainer">
       <label for="traffic">Traffic</label>
       <input type="range" min="100" max="500" value="0" class="slider" id="traffic">
     </div>
-
+    
     <div class="sliderContainer">
       <label for="mutation">Mutation</label>
       <input type="range" min="10" max="500" value="500" class="slider" id="mutation">
     </div>
-
+    
+    <button onclick="save()">Save Best 💾</button>
+    <button onclick="start()">New Run 🚗</button>
+    <button onclick="discard()">Start Over 🗑</button>
   </div>
-  <canvas id="networkCanvas"></canvas>
+
+  <div id="networkColumn">
+    <canvas id="networkCanvas"></canvas>
+  </div>
 
   <script src="visualizer.js"></script>
   <script src="network.js"></script>

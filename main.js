@@ -1,5 +1,8 @@
 
 //SETUP
+const carColumn = document.getElementById("carColumn")
+const networkColumn = document.getElementById("networkColumn")
+
 const carCanvas=document.getElementById("carCanvas")
 carCanvas.width=200
 
@@ -25,8 +28,9 @@ let traffic = []
 let animationOn = false;
 
 //these could be smarter on some function
-carCanvas.height=window.innerHeight
-networkCanvas.height=window.innerHeight
+console.log(carColumn.offsetHeight);
+carCanvas.height=carColumn.offsetHeight
+networkCanvas.height=networkColumn.offsetHeight
 road.draw(carCtx)
 
 function start() {
@@ -100,8 +104,8 @@ function draw() {
 
   bestCar = cars.find( c => c.y == Math.min( ...cars.map( c=>c.y )))
 
-  carCanvas.height=window.innerHeight
-  networkCanvas.height=window.innerHeight
+  carCanvas.height=carColumn.offsetHeight
+  networkCanvas.height=networkColumn.offsetHeight
 
   carCtx.save()
   carCtx.translate(0,-bestCar.y+carCanvas.height*0.7)
